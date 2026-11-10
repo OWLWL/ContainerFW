@@ -1,28 +1,8 @@
-# Config/PRIVATE.txt
-#
-# 本文件会被 Scripts/Settings.sh 追加到 .config 的末尾，
-# 位置在 Config/GENERAL.txt（以及主题/语言等配置）之后，
-# 所以可以覆盖 GENERAL.txt 里的同名配置，而不需要修改上游文件。
-#
-# 取消 GENERAL.txt 里已启用的包，用 Kconfig 的 "is not set" 形式：
-#
-# CONFIG_PACKAGE_luci-app-wolultra is not set
-#
-# 也可以直接写 =n（GENERAL.txt 本身就用了这种写法）：
-#
-# CONFIG_PACKAGE_luci-app-natmapt=n
-#
-# 注意：
-# 1. 只写 CONFIG_PACKAGE_<包名>，不要在这里改 CONFIG_TARGET_*。
-# 2. 如果目标包被其他已选包依赖（DEPENDS），make defconfig 会把它重新选上；
-#    这种情况需要把依赖它的包也一起去掉。
-# 3. 想确认最终结果，用 WRT_TEST=true 跑一次，下载生成的 Config-*.txt 检查。
-
-CONFIG_PACKAGE_luci-app-gecoosac is not set
-CONFIG_PACKAGE_luci-app-mini-diskmanager is not set
-CONFIG_PACKAGE_luci-app-partexp is not set
-CONFIG_PACKAGE_luci-app-samba4 is not set
-CONFIG_PACKAGE_luci-app-upnp is not set
+CONFIG_PACKAGE_luci-app-gecoosac=n
+CONFIG_PACKAGE_luci-app-mini-diskmanager=n
+CONFIG_PACKAGE_luci-app-partexp=n
+CONFIG_PACKAGE_luci-app-samba4=n
+CONFIG_PACKAGE_luci-app-upnp=n
 
 CONFIG_PACKAGE_luci-ssl-openssl=y
 CONFIG_PACKAGE_luci-app-lxc=y
